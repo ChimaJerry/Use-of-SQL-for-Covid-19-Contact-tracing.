@@ -1,5 +1,10 @@
 # Use-of-SQL-for-Covid-19-Contact-tracing.
 This project was engineered to track people who had contact with patients that tested positive for Covid-19.
+
+![image](https://github.com/user-attachments/assets/6e6520ad-c56e-478d-8d99-331b40523f17)
+
+
+
 ### Table of Content
 - Project Overview
 - Data Sources
@@ -22,3 +27,13 @@ The main data source for this work was derived from the "collated covid-19 data 
 - Power-Bi for Data Visulaization
 
 ### Data Cleaning/Preparation
+Indepth data cleaning and preparation was done after the data sets have been inspected and collated from diferent community vounteers or health workers. This process was crucia to check for data anomalise, missing vaues, outliers and removal of duplicates. I further made use of statistical measures like mean and mode to replace missing values when it was not outrageous or on the data for a specific patient. 
+ 
+### Exploratory Data Analysis (EDA)
+
+EDA involves taking indepth look into the data set to answer cardinal or important questions. For this projected work, it intends to unravel the following;
+- Number of people that tested positive after going to a party or large gatherings.
+- Home or office address of people that tested poitive.
+- Contact tracing of individuals using unique features such as phone numbers.
+
+### Data Analysis
