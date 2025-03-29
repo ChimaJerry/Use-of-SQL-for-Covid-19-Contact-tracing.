@@ -64,6 +64,13 @@ EDA involves taking indepth look into the data set to answer cardinal or importa
     ContactNumber VARCHAR(20),
     SizeOfParty INT
 );
+
+
+ #Task 2 – Test Queries
+ #   Query A: Local Test Activity
+ SELECT * FROM sample_test;
+ 
+ SELECT SubjectName, SubjectAddress, TestDate, Result FROM sample_test WHERE SubjectAddress LIKE '%Aberdeen%';
 ```
 #### Positivity rate
 ```sql
