@@ -54,3 +54,49 @@ EDA involves taking indepth look into the data set to answer cardinal or importa
   PRIMARY KEY (SN),
   foreign key(SubjectID) references subject_data(SubjectID));
 ```
+#### Visit Tracing
+```sql
+  CREATE TABLE Sample_Visit_Data (
+    SN INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    PlaceVisited VARCHAR(50),
+    OwnersName VARCHAR(50),
+    VisitDate DATE,
+    ContactNumber VARCHAR(20),
+    SizeOfParty INT
+);
+```
+#### Positivity rate
+```sql
+SELECT s.TestDate, s.SubjectName, v.VisitDate, v.PlaceVisited 
+FROM sample_test AS s 
+INNER JOIN Sample_Visit_Data AS v
+ON s.SN = v.SN
+WHERE s.Result = 'Positive' 
+AND v.VisitDate > s.TestDate;
+```
+#### Risk Assessment
+```sql
+SELECT PlaceVisited, VisitDate, 
+       COUNT(*) AS NumberOfParties, 
+       SUM(SizeOfParty) AS TotalVisitors
+FROM Sample_Visit_Data
+GROUP BY PlaceVisited, VisitDate
+ORDER BY TotalVisitors DESC;
+```
+
+#### Stored Procedures
+```sql
+delimiter &&
+create procedure subject_Number(IN var varchar(50))
+begin
+    if exists (select 1 from sample_test where PhoneNumber = var) then
+         select SubjectName from sample_test where PhoneNumber = var;
+	else
+        select 'unrecognised' as SubjectName;
+	end if;
+
+end &&
+delimiter ;
+call top_subject('07123-123456');
+```
+
