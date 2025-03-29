@@ -18,6 +18,9 @@ This project was engineered to track people who had contact with patients that t
 ### Project Overview
 In course of the Covid-19 outbreak, some persons reprted to the health facilities with symptoms of the aiment. Further investigations was done to knw individuals who tested positive and has been in a arge gathering e.g a party or a public space in the last 3 days before testing psitive. When individuals who has tested positive provide such information there was need to deveop a data management system to contact trace such people who might have been exposed to such, hence the need for this project work.
 
+### Skills Used
+Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types, and using SQL DDL (Data Definition Language) and DML (Data Manipulation Language) commands like 'INSERT', 'UPDATE', 'DELETE', 'CREATE', 'ALTER', and 'DROP where used to clean, transform and analyse the data.
+
 ### Data Source
 The main data source for this work was derived from the "collated covid-19 data csv" containing detailed information about each each patients that tested positive, where they reside, places they visited shortly before testing psitive to ascertain individuals who might have been at risk as a resut of such visit, this information was recodred by the health care and community volunteers. 
 
@@ -36,4 +39,18 @@ EDA involves taking indepth look into the data set to answer cardinal or importa
 - Home or office address of people that tested poitive.
 - Contact tracing of individuals using unique features such as phone numbers.
 
-### Data Analysis
+### Data Analysis/SQL Queries 
+
+```sql
+  CREATE TABLE sample_test  (
+  SN INT NOT NULL,
+  TestDate DATE,
+  SubjectID VARCHAR(10) NOT NULL,
+  SubjectName VARCHAR(50) NOT NULL,
+  SubjectAddress VARCHAR(50) NOT NULL,
+  Result VARCHAR(50) NOT NULL,
+  PhoneNumber VARCHAR(50) NOT NULL,
+  
+  PRIMARY KEY (SN),
+  foreign key(SubjectID) references subject_data(SubjectID));
+```
