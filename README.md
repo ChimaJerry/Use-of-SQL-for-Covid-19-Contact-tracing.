@@ -41,6 +41,7 @@ EDA involves taking indepth look into the data set to answer cardinal or importa
 
 ### Data Analysis/SQL Queries 
 
+##### Creating my Database 
 ```sql
   CREATE TABLE sample_test  (
   SN INT NOT NULL,
